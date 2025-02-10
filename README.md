@@ -1,4 +1,6 @@
-# LOG2990 - Code de base
+# Description
+Ce projet est un projet scolaire. Il consiste d'un jeu de différence pouvant se joeur en solo et en multijoueur. Ce repo contient une partie client en Angular et une partie serveur en NestJS.
+# Code de base
 
 Code de base à utiliser pour démarrer le développement de votre projet.
 Le code contient 2 projets séparés :
