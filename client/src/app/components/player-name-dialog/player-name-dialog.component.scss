@@ -1,0 +1,27 @@
+h1 {
+    justify-content: center;
+    font-family: 'Lucida Console', Times, serif;
+}
+
+.dialog {
+    width: 500px;
+    height: 215px;
+}
+
+#close-button {
+    font-size: 21px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    line-height: 14px;
+    min-width: auto;
+}
+
+button {
+    text-transform: uppercase;
+}
+
+#coop-button {
+    margin-right: 10px;
+}

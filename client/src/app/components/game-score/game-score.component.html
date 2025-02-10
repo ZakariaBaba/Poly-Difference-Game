@@ -1,0 +1,24 @@
+<div fxLayout="column" fxLayoutAlign="space-evenly">
+    <h1 class='top'>TOP 3</h1>
+    <div class="score-container" fxLayout="row" fxLayoutAlign="space-evenly">
+        <div style="display: block;">
+            <h2>SOLO</h2>
+            <ul class="ranking" *ngFor="let time of listOfGameSolo; let i = index"
+                style="display: flex; justify-content: space-between;">
+                <span>{{i + 1}} - </span>
+                <span> {{time.playerName}}:</span>
+                <span>{{time.formattedTime}}</span>
+            </ul>
+            <mat-spinner *ngIf="!listOfGameSolo"></mat-spinner>
+        </div>
+        <div style="display: block;">
+            <h2>1 v 1</h2>
+            <ul *ngFor="let time of listOfGame1v1; let i=index" style="display: flex; justify-content: space-between;">
+                <span>{{i + 1}} - </span>
+                <span> {{time.playerName}}:</span>
+                <span>{{time.formattedTime}}</span>
+            </ul>
+            <mat-spinner *ngIf="!listOfGameSolo"></mat-spinner>
+        </div>
+    </div>
+</div>

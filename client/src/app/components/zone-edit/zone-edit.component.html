@@ -1,0 +1,130 @@
+<div style="display: flex; flex-direction: row">
+    <section class="draw-section">
+        <header>
+            <h2>Original</h2>
+            <form>
+                <input #imageInput id="input-original" style="display: none" type="file" accept="image/bmp"
+                    (change)="loadImage(imageInput, this.originalContext)" />
+                <input #imageInputReset id="input-original-reset" style="display: none" type="reset">
+            </form>
+            <div class="button-group">
+                <button mat-button matTooltip="Téleverser une image" [matTooltipPosition]="'above'" onclick="document.querySelector('#input-original-reset').click();
+                    document.querySelector('#input-original').click()">
+                    <mat-icon>upload</mat-icon>
+                </button>
+                <button mat-button matTooltip="Effacer les tracés de crayon" [matTooltipPosition]="'above'"
+                    (click)="clearCanvas(originalDrawingContext)">
+                    <mat-icon> layers_clear</mat-icon>
+                </button>
+                <button mat-button matTooltip="Réinitialisation de l'image" [matTooltipPosition]="'above'"
+                    (click)="clearBackground(this.originalContext)">
+                    <mat-icon>restore_page</mat-icon>
+                </button>
+
+            </div>
+        </header>
+        <canvas class="drawing-area" id="drawing-area" #orginalCanvas width="640px" height="480px"> </canvas>
+        <canvas id="preview-area" #orginalPreview width="640px" height="480px"
+            (mousedown)="onMouseDown($event,this.originalDrawingContext,this.orginalPreviewContext)"
+            (mousemove)="onMouseMove($event,this.originalDrawingContext,this.orginalPreviewContext)"
+            (mouseup)="onMouseUp($event,this.originalDrawingContext,this.orginalPreviewContext)">
+        </canvas>
+        <canvas id="drawing-preview" #orginalDrawing width="640px" height="480px"> </canvas>
+
+    </section>
+    <section class="arrow-section">
+        <button mat-button id="help" (click)="openGuidelineDialog()">
+            <mat-icon>help</mat-icon>
+        </button>
+        <form>
+            <input #imageInput2 id="input-file" style="display: none" type="file" accept="image/bmp"
+                (change)="loadImage(imageInput2, this.modifiedContext, this.originalContext)" />
+            <input #imageInputReset2 id="input-file-reset" style="display: none" type="reset">
+        </form>
+        <div class="arrows-group">
+            <button mat-button
+                onclick="document.querySelector('#input-file-reset').click(); document.querySelector('#input-file').click()"
+                matTooltip="Téleverser une image" [matTooltipPosition]="'above'">
+                <mat-icon class="upload2">upload</mat-icon>
+                <mat-icon class="upload1">upload</mat-icon>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-button (click)="switchBothDrawingContext(originalDrawingContext,modifiedDrawingContext)"
+                matTooltip="Transferer l'image sur l'autre zone" [matTooltipPosition]="'above'">
+                <mat-icon>swap_horiz</mat-icon>
+            </button>
+            <button mat-button (click)="switchDrawingContext(originalDrawingContext,modifiedDrawingContext)"
+                matTooltip="Copier l'image dans la zone modifié" [matTooltipPosition]="'above'">
+                <mat-icon>arrow_forward</mat-icon>
+            </button>
+            <button mat-button (click)="switchDrawingContext(modifiedDrawingContext,originalDrawingContext)"
+                matTooltip="Copier l'image dans la zone original" [matTooltipPosition]="'above'">
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+        </div>
+    </section>
+    <section class="draw-section">
+        <header>
+            <h2>Modifié</h2>
+            <form>
+                <input #imageInput3 id="input-mod" style="display: none" type="file" accept="image/bmp"
+                    (change)="loadImage(imageInput3, this.modifiedContext)" />
+                <input #imageInputReset3 id="input-mod-reset" style="display: none" type="reset">
+            </form>
+            <div class="button-group">
+                <button mat-button matTooltip="Téleverser une image" [matTooltipPosition]="'above'"
+                    onclick="document.querySelector('#input-mod-reset').click(); document.querySelector('#input-mod').click()">
+                    <mat-icon>upload</mat-icon>
+                </button>
+                <button mat-button matTooltip="Effacer les tracés de crayon" [matTooltipPosition]="'above'"
+                    (click)="clearCanvas(modifiedDrawingContext)">
+                    <mat-icon> layers_clear</mat-icon>
+                </button>
+                <button mat-button matTooltip="Réinitialisation de l'image" [matTooltipPosition]="'above'"
+                    (click)="clearBackground(this.modifiedContext)">
+                    <mat-icon>restore_page</mat-icon>
+                </button>
+            </div>
+        </header>
+        <canvas id="drawing-area" #modifiedCanvas width="640px" height="480px" (keydown.control.z)="ctrlZ()"
+            (keydown.control.shift.z)="ctrlZ()"> </canvas>
+        <canvas id="preview-area" #modifiedPreview width="640px" height="480px"
+            (mousedown)="onMouseDown($event,this.modifiedDrawingContext,this.modifiedPreviewContext)"
+            (mousemove)="onMouseMove($event,this.modifiedDrawingContext,this.modifiedPreviewContext)"
+            (mouseup)="onMouseUp($event,this.modifiedDrawingContext,this.modifiedPreviewContext)">
+        </canvas>
+        <canvas id="drawing-preview" #modifiedDrawing width="640px" height="480px">
+        </canvas>
+
+    </section>
+</div>
+<footer class="footer-container" style="flex-direction: row">
+    <div class="settings-container">
+        <div id="difference-button">
+            <button mat-raised-button class="button" (click)="showDifference()" [disabled]="!canGetDifferences"> Valider
+                les différences</button>
+            <mat-icon [ngStyle]="{'color':'orange'}" class="warning" *ngIf="!canGetDifferences"
+                matTooltip="Aucun changement detecté sur les canvas" [matTooltipPosition]="'above'">warning
+            </mat-icon>
+        </div>
+        <div class="radius" style="flex-direction: column; align-items: flex-start">
+            <h3>Rayon d'élargissement</h3>
+            <label for="radius">Choisir un rayon: (défaut 3)</label>
+            <select ngModel (ngModelChange)="setRadius($event)">
+                <option value="" disabled selected hidden>3</option>
+                <option id="radius" *ngFor="let radius of availableRadius" aria-placeholder="2">{{ radius }}</option>
+            </select>
+        </div>
+        <div class="differences" style="flex-direction: column; align-items: center">
+            <h3>Nombre de différences</h3>
+            <div style="flex-direction: row; align-items: center">
+                <p>{{ this.differenceNumber }}</p>
+                <mat-icon [ngStyle]="{'color':'orange'}" *ngIf="differenceNumber < 3 || differenceNumber > 9"
+                    matTooltip="Vous devez avoir entre 3 et 9 différences" [matTooltipPosition]="'above'">warning
+                </mat-icon>
+            </div>
+        </div>
+    </div>
+    <button mat-raised-button class="button" id="button-validation"
+        [disabled]="differenceNumber < 3 || differenceNumber > 9" (click)="openSaveGameDialog()">Sauvegarder</button>
+</footer>

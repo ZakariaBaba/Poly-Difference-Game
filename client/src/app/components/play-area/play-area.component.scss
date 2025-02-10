@@ -1,0 +1,72 @@
+#modifiedCanvas {
+    border: 8px solid #403233;
+    position: relative;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 640px;
+    height: 480px;
+    z-index: 1;
+}
+#originalCanvas {
+    border: 8px solid #403233;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 640px;
+    height: 480px;
+}
+#differenceCanvas {
+    border: 8px solid transparent;
+    width: 640px;
+    height: 480px;
+    position: absolute;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    z-index: 2;
+}
+#endCanvas {
+    border: 8px solid #403233;
+    width: 640px;
+    height: 480px;
+    position: absolute;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    z-index: 0;
+}
+
+.error {
+    position: absolute;
+    z-index: 2;
+    font-size: 25px;
+    font-weight: bold;
+    color: red;
+    text-shadow: 2px 2px 5px black;
+    pointer-events: none;
+}
+.draw-section {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    border-radius: 15px;
+    margin-left: 50px;
+    width: 650px;
+}
+
+.blink {
+    animation: blink 200ms infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

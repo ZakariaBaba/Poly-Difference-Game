@@ -1,0 +1,24 @@
+<div mat-dialog-content fxLayout="column" class="dialog">
+    <h1>Entrez le nom du joueur</h1>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Nom</mat-label>
+        <input *ngIf="data.mode === 'classic'" #input matInput [formControl]="playerName"
+            (keydown.enter)="onSubmitNormalMode()" >
+        <input *ngIf="data.mode === 'sprint'" matInput [formControl]="playerName">
+        <mat-error *ngIf="playerName.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-dialog-actions fxLayoutAlign="space-between" fxLayout="row">
+        <button *ngIf="data.mode === 'classic'" mat-raised-button  class="button" (click)="onSubmitNormalMode()"
+            [disabled]="!playerName.valid" color="primary"> Jouer </button>
+        <div *ngIf="data.mode === 'sprint'" fxLayoutGap="50px">
+            <button mat-raised-button (click)="onSubmitSprintSoloMode()" [disabled]="!playerName.valid" color="primary">
+                <mat-icon>person</mat-icon> Solo</button>
+            <button mat-raised-button id="coop-button"(click)="onSubmitSprintMultiplayerMode()" [disabled]="!playerName.valid"
+                color="primary"> <mat-icon>group</mat-icon> Coopératif</button>
+        </div>
+        <button mat-raised-button mat-dialog-close color="secondary">Annuler</button>
+    </mat-dialog-actions>
+</div>
+<button mat-button mat-dialog-close id="close-button"> <mat-icon>highlight_off</mat-icon></button>

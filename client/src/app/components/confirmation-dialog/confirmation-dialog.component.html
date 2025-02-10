@@ -1,0 +1,13 @@
+<div mat-dialog-content class='mat-dialog'>
+    <h1>Attention!</h1>
+    <mat-dialog-content>
+        <p>Êtes-vous sûr de vouloir supprimer la fiche de jeu <strong>{{game.name}}</strong>?</p>
+    </mat-dialog-content>
+    <mat-dialog-actions fxLayoutAlign="end">
+        <button mat-raised-button matDialogClose color="warn" (click)="deleteGame()">SUPPRIMER</button>
+        <button mat-raised-button matDialogClose color="secondary">ANNULER</button>
+    </mat-dialog-actions>
+</div>
+<button mat-button mat-dialog-close id="close-button">
+    <mat-icon>highlight_off</mat-icon>
+</button>

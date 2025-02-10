@@ -1,0 +1,28 @@
+<header class="header-container justify-container">
+    <button mat-raised-button class="button" routerLink="/admin">Quitter</button>
+    <h1>Mode Création</h1>
+    <div class="cat-sleeping">
+        <!--taken from https://codingartistweb.com/2021/10/how-to-create-sleeping-cat-animation-with-css/-->
+
+        <body>
+            <div class="container">
+                <div class="shadow"></div>
+                <div class="cat">
+                    <div class="ear"></div>
+                    <div class="eye"></div>
+                    <div class="mouth"></div>
+                    <div class="nose"></div>
+                    <div class="tail"></div>
+                    <div class="body"></div>
+                    <div class="bubble"></div>
+                </div>
+            </div>
+        </body>
+    </div>
+</header>
+<main class="main-container">
+    <div class="section-container">
+        <app-tool-selector></app-tool-selector>
+        <app-zone-edit style="display: flex; flex-direction: column; align-items: flex-start"></app-zone-edit>
+    </div>
+</main>

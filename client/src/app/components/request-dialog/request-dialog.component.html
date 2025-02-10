@@ -1,0 +1,9 @@
+<div mat-dialog-content class="dialog">
+    <h1>Nouvelle requête!</h1>
+    <br>
+    <p *ngIf="joinRequest"><strong>{{joinRequest.playerName}}</strong> aimerait joindre votre partie! </p>
+    <mat-dialog-actions fxLayoutAlign="end">
+        <button mat-raised-button (click)="acceptPlayer()" color="primary"> <mat-icon>done</mat-icon> Accepter </button>
+        <button mat-raised-button (click)="rejectPlayer()" color=""> <mat-icon>clear</mat-icon> Refuser </button>
+    </mat-dialog-actions>
+</div>

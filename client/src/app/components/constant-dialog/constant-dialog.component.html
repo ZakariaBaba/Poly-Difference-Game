@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Modification des constantes</h1>
+<div mat-dialog-content>
+    <form>
+        <div style="display: flex; justify-content:space-between">
+            <label for="time"> Temps total en seconde (entre 30 et 90) pour le mode temps limité : </label>
+            <input [formControl]="totalTimeCheck" type="number" id="total-time" name="total-time" min="30" max="90">
+        </div>
+        <br>
+        <br>
+        <div style="display: flex; justify-content:space-between">
+            <label for="penalty-time"> Pénalité en seconde (entre 5 et 30) suite à l'utilisation d'un indice : </label>
+            <input [formControl]="penaltyCheck" type="number" id="penalty" name="penalty" min="5" max="30">
+        </div>
+
+        <br>
+        <br>
+        <div style="display: flex; justify-content:space-between">
+            <label for="won"> Temps gagné en seconde (entre 5 et 30) après la découverte d'une différence : </label>
+            <input [formControl]="timeWonCheck" type="number" id="time-won" name="time-won" min="5" max="30">
+        </div>
+    </form>
+</div>
+<br>
+<div mat-dialog-actions fxLayoutAlign="end">
+    <button mat-raised-button matDialogClose color="primary" (click)="initTime() ">RÉINITIALISER</button>
+    <button mat-raised-button matDialogClose color="primary" (click)="setConstantData();"
+        [disabled]="totalTimeCheck.invalid || penaltyCheck.invalid || timeWonCheck.invalid">SAUVEGARDER</button>
+
+    <button mat-raised-button matDialogClose color="secondary">ANNULER</button>
+</div>
+<button mat-button mat-dialog-close id="close-button">
+    <mat-icon>highlight_off</mat-icon>
+</button>

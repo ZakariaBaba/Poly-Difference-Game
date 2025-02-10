@@ -1,0 +1,149 @@
+.container {
+    min-height: 100vh;
+    height: auto;
+    position: static;
+    overflow-y: auto;
+}
+
+.justified {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: auto;
+}
+
+h1 {
+    position: absolute;
+    height: 148px;
+    left: 1025px;
+    top: 250px;
+    font-family: 'Lucida Console', Times, serif;
+    text-transform: uppercase;
+    font-size: 37px;
+    font-weight: 1000;
+    overflow-y: auto;
+}
+h2 {
+    font-family: 'Lucida Console', Times, serif;
+}
+
+img {
+    position: absolute;
+    width: 860.62px;
+    height: 835.83px;
+    left: 60.75px;
+    top: 30.93px;
+    transform: matrix(-0.97, -0.24, -0.24, 0.97, 0, 0);
+}
+
+.btn-group {
+    background-color: palegoldenrod;
+    width: 1920px;
+    height: 310px;
+}
+.mat-button {
+    left: 1220px;
+    top: 390px;
+    display: block;
+    margin-bottom: 50px;
+    background-color: beige;
+    width: 370px;
+    height: 90px;
+    border-radius: 20px;
+}
+
+.button {
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.team-name {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    color: green;
+}
+
+.header-item {
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-item {
+    text-align: center;
+}
+
+.footer-item p :nth-child(even) {
+    color: orange;
+}
+.footer-item p :nth-child(odd) {
+    color: blue;
+}
+
+//taken from https://codepen.io/marsallan/pen/ExVovEr
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.btn {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 20px 30px;
+    text-align: center;
+    background: blue;
+    color: black;
+    perspective: 300px;
+    left: 1220px;
+    top: 390px;
+    display: block;
+    margin-bottom: 50px;
+    background-color: beige;
+    width: 370px;
+    height: 90px;
+    border-radius: 20px;
+    border: solid beige;
+
+    &::before {
+        content: attr(data-hover);
+        position: absolute;
+        top: -3px;
+        right: -3px;
+        bottom: 0;
+        background: palegoldenrod;
+        font-size: 20px;
+        font-weight: 60;
+        border-radius: 20px;
+        transform-style: preserve-3d;
+        transition: 200ms opacity, 500ms transform;
+        perspective: 300px;
+        opacity: 0;
+        border: solid #6b6054;
+        width: 370px;
+        height: 90px;
+        padding: 20px 30px;
+    }
+    &:hover {
+        &::before {
+            opacity: 1;
+        }
+    }
+}
+
+.btn-top {
+    &::before {
+        transform: rotateX(90deg) translateZ(30px);
+    }
+    &:hover,
+    &:active {
+        &::before {
+            transform: rotateX(0deg);
+        }
+    }
+}

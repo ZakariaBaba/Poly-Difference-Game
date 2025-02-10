@@ -1,0 +1,341 @@
+.main-container {
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.header-container {
+    display: flex;
+    height: 160px;
+    align-items: center;
+    justify-content: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+header h1 {
+    font-family: 'Lexend Exa';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+header button {
+    width: 216px;
+    height: 91px;
+    background: #b56b45;
+    border-radius: 40px;
+    position: absolute;
+    left: 32px;
+    top: 38px;
+    font-family: 'Lucida Console', Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: white;
+}
+
+button {
+    cursor: pointer;
+    padding: 0px;
+}
+
+.section-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 30px 74px;
+}
+
+.tool-section {
+    background-color: beige;
+    border-radius: 15px;
+    width: 218px;
+    height: 666px;
+    margin-right: 32px;
+}
+
+.tools-container {
+    display: flex;
+    flex-flow: row wrap;
+    place-content: flex-start space-between;
+    margin: 20px;
+    width: 180px;
+    height: 170px;
+}
+
+.tools-container button {
+    display: flex;
+    margin: 11px;
+    width: 65px;
+    height: 65px;
+    justify-content: center;
+    align-items: center;
+    border: 0px;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+}
+.tools-container mat-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+}
+
+.thickness-container {
+    display: flex;
+    flex-flow: row wrap;
+    place-content: flex-start space-between;
+    margin: 49px 24px;
+    width: 170px;
+    height: 112px;
+}
+
+.thickness-container button {
+    display: flex;
+    margin-bottom: 14px;
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: #9b9b89;
+    border: 2px solid;
+}
+
+.circle {
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+#thickness1 div {
+    width: 5px;
+    height: 5px;
+}
+
+#thickness2 div {
+    width: 10px;
+    height: 10px;
+}
+
+#thickness3 div {
+    width: 15px;
+    height: 15px;
+}
+
+#thickness4 div {
+    width: 20px;
+    height: 20px;
+}
+
+#thickness5 div {
+    width: 25px;
+    height: 25px;
+}
+
+#thickness6 div {
+    width: 30px;
+    height: 30px;
+}
+
+.color-container {
+    display: flex;
+    flex-flow: row wrap;
+    place-content: flex-start space-between;
+    margin: 23px 15px;
+    width: 188px;
+    height: 183px;
+}
+
+.color-container button {
+    display: flex;
+    margin-bottom: 14px;
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    border: 0px;
+}
+
+mat-divider {
+    border: 3px solid rgba(0, 0, 0, 0.6);
+}
+
+.cat-sleeping {
+    position: relative;
+    top: 67px;
+    left: 520px;
+    transform: rotateY(180deg);
+}
+
+//taken from https://codingartistweb.com/2021/10/how-to-create-sleeping-cat-animation-with-css/
+
+body {
+    background-color: #1f2964;
+    padding: 0;
+    margin: 0;
+}
+.container {
+    height: 200px;
+    width: 350px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+.cat {
+    background-color: #f19b1a;
+    height: 65px;
+    width: 80px;
+    border-radius: 0 80px 80px 0;
+    position: absolute;
+    bottom: 60px;
+    right: 50px;
+}
+.ear {
+    height: 15px;
+    width: 15px;
+    background-color: #f19b1a;
+    position: absolute;
+    bottom: 64px;
+    left: 8px;
+    border-radius: 20px 0 0 0;
+    box-shadow: 25px 0 #f19b1a;
+}
+.eye,
+.eye:before {
+    height: 7px;
+    width: 10px;
+    border: 2px solid #2c2c2c;
+    position: absolute;
+    border-radius: 0 0 15px 15px;
+    border-top: none;
+}
+.eye {
+    top: 18px;
+    left: 15px;
+}
+.eye:before {
+    content: '';
+    left: 30px;
+}
+.nose {
+    background-color: #ffffff;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    position: absolute;
+    top: 32px;
+    left: 25px;
+    box-shadow: 12px 0 #ffffff;
+}
+.nose:before {
+    content: '';
+    width: 12px;
+    height: 8px;
+    position: absolute;
+    background-color: #ffffff;
+    left: 6px;
+}
+.nose:after {
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-top: 8px solid #ef926b;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    bottom: 7px;
+    left: 6px;
+}
+.mouth {
+    background-color: #2c2c2c;
+    height: 15px;
+    width: 17px;
+    position: absolute;
+    border-radius: 0 0 5px 5px;
+    top: 38px;
+    left: 27px;
+    animation: mouth-move 2s infinite;
+    transform-origin: top;
+}
+@keyframes mouth-move {
+    50% {
+        transform: scaleY(0.7);
+    }
+}
+.body {
+    background-color: #f19b1a;
+    height: 90px;
+    width: 140px;
+    position: absolute;
+    right: 65px;
+    bottom: 0;
+    border-radius: 60px 60px 0 0;
+    animation: sleep 2s infinite;
+    transform-origin: bottom right;
+}
+@keyframes sleep {
+    50% {
+        transform: scale(0.9, 1.05);
+    }
+}
+.tail {
+    background-color: #d07219;
+    height: 20px;
+    width: 100px;
+    position: absolute;
+    right: 150px;
+    bottom: 0;
+    border-radius: 20px 0 0 20px;
+}
+.body:before {
+    content: '';
+    position: absolute;
+    background-color: #ffffff;
+    height: 12px;
+    width: 30px;
+    border-radius: 6px;
+    bottom: 0;
+    left: 22px;
+    box-shadow: 45px 0 #ffffff;
+}
+.bubble {
+    height: 20px;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    left: 65px;
+    top: 20px;
+    border-radius: 50px 50px 50px 5px;
+    animation: bubble-scale 2s infinite;
+}
+@keyframes bubble-scale {
+    50% {
+        transform: scale(1.6);
+    }
+}
+.shadow {
+    height: 10px;
+    width: 240px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 52px;
+    left: 70px;
+    animation: shadow 2s infinite;
+}
+@keyframes shadow {
+    50% {
+        transform: scaleX(0.7);
+    }
+}

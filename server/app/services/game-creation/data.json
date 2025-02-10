@@ -1,0 +1,11 @@
+{
+    "listOfGames": [
+        {
+            "id": "7086234b-2659-46aa-9357-fab6af2f454e",
+            "name": "test",
+            "originalSrc": "http://localhost:3000/api/list-game/original-image/7086234b-2659-46aa-9357-fab6af2f454e",
+            "modifiedSrc": "http://localhost:3000/api/list-game/modified-image/7086234b-2659-46aa-9357-fab6af2f454e",
+            "numberOfDifference": 3
+        }
+    ]
+}

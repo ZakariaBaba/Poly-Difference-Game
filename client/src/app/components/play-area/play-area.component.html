@@ -1,0 +1,23 @@
+<div #error class="error"></div>
+<div style="display: flex; flex-direction: row">
+    <section class="draw-section">
+        <canvas id="originalCanvas" #originalCanvas [attr.height]="height" [attr.width]="width"
+            (click)="onMouseClick($event)"> </canvas>
+        <canvas id="differenceCanvas" #cheatOriginalCanvas class="blink" [attr.height]="height" [attr.width]="width"
+            (click)="onMouseClick($event)" (keydown.t)="activateCheatMode()"> </canvas>
+        <canvas id="differenceCanvas" #hintOriginalCanvas class="blink" [attr.height]="height" [attr.width]="width"
+            (click)="onMouseClick($event)" (keydown.i)="getHint()"> </canvas>
+    </section>
+    <section class="draw-section">
+        <canvas id="endCanvas" #endCanvas [attr.height]="height" [attr.width]="width" (click)="onMouseClick($event)">
+        </canvas>
+        <canvas id="modifiedCanvas" #modifiedCanvas [attr.height]="height" [attr.width]="width"
+            (click)="onMouseClick($event)"> </canvas>
+        <canvas id="differenceCanvas" #differenceCanvas class="blink" [attr.height]="height" [attr.width]="width"
+            (click)="onMouseClick($event)"> </canvas>
+        <canvas id="differenceCanvas" #cheatModifiedCanvas class="blink" [attr.height]="height" [attr.width]="width"
+            (click)="onMouseClick($event)"> </canvas>
+        <canvas id="differenceCanvas" #hintModifiedCanvas class="blink" [attr.height]="height" [attr.width]="width"
+            (click)="onMouseClick($event)" (keydown.i)="getHint()"> </canvas>
+    </section>
+</div>

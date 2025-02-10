@@ -1,0 +1,158 @@
+button {
+    cursor: pointer;
+    padding: 0px;
+}
+
+.tool-section {
+    background-color: beige;
+    border-radius: 15px;
+    width: 218px;
+    height: 666px;
+    margin-right: 32px;
+}
+
+.tools-container {
+    display: flex;
+    flex-flow: row wrap;
+    place-content: flex-start space-between;
+    margin: 20px;
+    width: 180px;
+    height: 170px;
+}
+
+.tools {
+    display: flex;
+    margin: 11px;
+    width: 65px;
+    height: 65px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #d9d9d9;
+}
+.arrows {
+    display: flex;
+    margin: 11px;
+    width: 65px;
+    height: 65px;
+    justify-content: center;
+    align-items: center;
+    border: 0px;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+}
+/*.arrows:focus,
+:visited {
+    background-color: #857c7c;
+}*/
+
+.tools-container button:hover {
+    background-color: #857c7c;
+}
+.tools-container mat-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+}
+.tools.active {
+    background-color: #d9d9d9;
+    border: solid 3px;
+    pointer-events: all;
+}
+
+.thickness {
+    color: beige;
+    border: solid 1px;
+}
+.thickness.activate-border {
+    color: black;
+    border: solid 5px;
+}
+
+.thickness-container {
+    display: flex;
+    flex-flow: row wrap;
+    place-content: flex-start space-between;
+    margin: 49px 24px;
+    width: 170px;
+    height: 112px;
+}
+
+.thickness-container button {
+    display: flex;
+    margin-bottom: 14px;
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: #9b9b89;
+    border: 2px solid;
+}
+
+.circle {
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+#thickness1 div {
+    width: 5px;
+    height: 5px;
+}
+
+#thickness2 div {
+    width: 10px;
+    height: 10px;
+}
+
+#thickness3 div {
+    width: 15px;
+    height: 15px;
+}
+
+#thickness4 div {
+    width: 20px;
+    height: 20px;
+}
+
+#thickness5 div {
+    width: 25px;
+    height: 25px;
+}
+
+#thickness6 div {
+    width: 30px;
+    height: 30px;
+}
+
+.color-container {
+    display: flex;
+    flex-flow: row wrap;
+    place-content: flex-start space-between;
+    margin: 23px 15px;
+    width: 188px;
+    height: 183px;
+}
+
+.color {
+    display: flex;
+    margin-bottom: 14px;
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    //border: solid 1px;
+    border: 0px;
+}
+.color.smaller {
+    display: flex;
+    margin-bottom: 14px;
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    border: 8px solid beige;
+}
+
+mat-divider {
+    border: 3px solid rgba(0, 0, 0, 0.6);
+}

@@ -1,0 +1,10 @@
+<div mat-dialog-content class='dialog'>
+    <h1>Attention!</h1>
+    <mat-dialog-content>
+        <p>{{this.confirmationText}}</p>
+    </mat-dialog-content>
+    <mat-dialog-actions fxLayoutAlign="end">
+        <button mat-raised-button color="primary" *ngIf="this.isSave" routerLink="/admin" (click)="onClose()">
+            Quitter</button>
+    </mat-dialog-actions>
+</div>

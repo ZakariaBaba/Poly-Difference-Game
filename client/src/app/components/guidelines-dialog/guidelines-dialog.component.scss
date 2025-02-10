@@ -1,0 +1,51 @@
+h1 {
+    text-align: center;
+    font-family: 'Lucida Console', Times, serif;
+}
+p {
+    position: relative;
+    padding: 10px;
+    bottom: 27px;
+    left: 30px;
+    font-size: 18px;
+    display: block;
+}
+
+.guideline-upload {
+    overflow: hidden;
+}
+
+.guideline-swap_horiz {
+    overflow: hidden;
+}
+
+.guideline-arrow_forward {
+    overflow: hidden;
+}
+
+.guideline-arrow_back {
+    overflow: hidden;
+}
+
+.guideline-replay {
+    overflow: hidden;
+}
+
+.guideline-clear {
+    overflow: hidden;
+}
+
+.upload-second {
+    position: relative;
+    right: 31px;
+}
+
+#close-button {
+    font-size: 21px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    line-height: 14px;
+    min-width: auto;
+}

@@ -1,0 +1,74 @@
+<section class="tool-section">
+    <div class="tools-container">
+        <button class='tools' id="pencil" (click)="setTool(0); buttonsTools('pencil', 'active');">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button class='tools' id="eraser" (click)="setTool(1); buttonsTools('eraser', 'active');">
+            <img src="https://api.iconify.design/mdi/eraser.svg?width=55&height=55&flip=horizontal%2Cvertical"
+                alt="eraser" />
+        </button>
+        <button class='arrows' id="undo" (click)="undo()" matTooltip="Ctrl + Z">
+            <mat-icon>undo</mat-icon>
+        </button>
+        <button class='arrows' id="redo" matTooltip="Ctrl + Shift + Z" (click)="redo()">
+            <mat-icon>redo</mat-icon>
+        </button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="thickness-container">
+        <button class="thickness" id="thickness1"
+            (click)="setStrockeWidth(5); buttonsTools('thickness1', 'activate-border');">
+            <div class="circle"></div>
+        </button>
+        <button class=thickness id="thickness2"
+            (click)="setStrockeWidth(10); buttonsTools('thickness2', 'activate-border');">
+            <div class="circle"></div>
+        </button>
+        <button class=thickness id="thickness3"
+            (click)="setStrockeWidth(15); buttonsTools('thickness3', 'activate-border');">
+            <div class="circle"></div>
+        </button>
+        <button class=thickness id="thickness4"
+            (click)="setStrockeWidth(20); buttonsTools('thickness4', 'activate-border');">
+            <div class="circle"></div>
+        </button>
+        <button class=thickness id="thickness5"
+            (click)="setStrockeWidth(25); buttonsTools('thickness5', 'activate-border');">
+            <div class="circle"></div>
+        </button>
+        <button class=thickness id="thickness6"
+            (click)="setStrockeWidth(30); ; buttonsTools('thickness6', 'activate-border');">
+            <div class="circle"></div>
+        </button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="color-container">
+        <button class="color" id="black" style="background-color: #000000"
+            (click)="setStrokeColor('#000000'); buttonsTools('black', 'smaller');">
+        </button>
+        <button class="color" id="blue" style="background-color: #0b06fe"
+            (click)="setStrokeColor('#0b06fe'); buttonsTools('blue', 'smaller');">
+        </button>
+        <button class="color" id="red" style="background-color: #ff0404"
+            (click)="setStrokeColor('#ff0404'); buttonsTools('red', 'smaller');">
+        </button>
+        <button class="color" id="grey" style="background-color: #706e6e"
+            (click)="setStrokeColor('#706e6e');buttonsTools('grey', 'smaller');">
+        </button>
+        <button class="color" id="cyan" style="background-color: #02f0ff"
+            (click)="setStrokeColor('#02f0ff'); buttonsTools('cyan', 'smaller');">
+        </button>
+        <button class="color" id="orange" style="background-color: #ff7a00"
+            (click)="setStrokeColor('#ff7a00'); buttonsTools('orange', 'smaller');">
+        </button>
+        <button class="color" id="white" style="background-color: #ffffff"
+            (click)="setStrokeColor('#ffffff'); buttonsTools('white', 'smaller');">
+        </button>
+        <button class="color" id="green" style="background-color: #01ff1a"
+            (click)="setStrokeColor('#01ff1a'); buttonsTools('green', 'smaller');">
+        </button>
+        <button class="color" id="yellow" style="background-color: #fff500"
+            (click)="setStrokeColor('#fff500'); buttonsTools('yellow', 'smaller');">
+        </button>
+    </div>
+</section>

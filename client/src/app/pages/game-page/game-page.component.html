@@ -1,0 +1,94 @@
+<div fxLayout="row" class="parent" fxLayoutGap="20px" fxFlexFill>
+    <div fxLayout="column" fxLayoutGap="20px">
+        <header class="header-container justify-container">
+            <button mat-raised-button class="button" (click)="openLeaveConfirmationDialog()">
+                Quitter</button>
+            <h1 *ngIf="mode === 'classic'">Trouvez {{getWinCondition()}} différences!</h1>
+            <h1 *ngIf="mode === 'sprint'">Trouvez les différences!</h1>
+        </header>
+
+        <div fxLayout="row" fxLayoutGap="50px" fxLayoutAlign="start center" *ngIf="modifiedImage && originalImage">
+            <app-play-area [originalImageURL]="this.originalImage" [modifiedImageURL]="this.modifiedImage"
+                [canGetHint]="hasHint" (usedHint)="setHints($event)">
+            </app-play-area>
+        </div>
+        <div fxLayout="row" fxLayoutGap="50px" fxLayoutAlign="start center" *ngIf="!modifiedImage && !originalImage">
+            <div style="display: flex; flex-direction: row">
+                <section class="draw-section">
+                    <canvas class="canvas" [attr.height]="480" [attr.width]="640"></canvas>
+                </section>
+                <section class="draw-section">
+                    <canvas class="canvas" [attr.height]="480" [attr.width]="640"></canvas>
+                </section>
+            </div>
+        </div>
+
+        <div fxLayout=" row" fxLayoutAlign="space-around" class="bottom-container">
+
+            <button mat-raised-button fxLayout="column" id="clue-section" class="clues" *ngIf="hasHint"
+                (click)="getHint()">
+                <p class="clue-title">Indice:</p>
+                <p class="clue-explication">Penalité:
+                    {{penalty}} secondes</p>
+                <link rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+                <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="space-between">
+                    <button mat-button color="basic" class="button-clue" *ngFor="let hint of [].constructor(hints)">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+
+            </button>
+            <div fxLayout="column" class="counter">
+                <p class="counter-title">Différences trouvées:</p>
+                <div *ngIf="game && mode === 'classic'" fxLayout="column" fxLayoutGap="25px">
+                    <p>{{ hostName }} : {{ differenceCount.host }} / {{getWinCondition()}}</p>
+                    <p *ngIf="mode === 'classic' && type === 'multiplayer'">
+                        {{ guestName }} : {{ differenceCount.guest}} / {{getWinCondition()}}</p>
+                </div>
+                <p *ngIf="mode === 'sprint'">
+                    {{ hostName }} <span *ngIf="type === 'multiplayer'">et {{guestName}} </span>: {{
+                    differenceCount.total}}
+                </p>
+            </div>
+            <div fxLayout="column" class="timer">
+                <p class="timer-title">Temps:</p>
+                <div fxLayout="row">
+                    <app-timer></app-timer>
+                    <div class="animation" *ngIf="type === 'solo' && mode === 'sprint' && isHintUsed" @fadeSlideInOut>-
+                        {{penalty}} s</div>
+                    <div class="animation" *ngIf="type === 'solo' && mode === 'classic' && isHintUsed" @fadeSlideInOut>+
+                        {{penalty}} s</div>
+                    <div class="animation" *ngIf="mode === 'sprint' && isDifferenceFound" @fadeSlideInOut>+
+                        {{timeBonus}} s</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidenav">
+        <h2 class="title-game-information" style="text-align: center">Informations sur la partie</h2>
+        <div fxLayout="row" fxLayoutGap="25px" fxLayoutAlign="start center">
+            <div class="game-information">
+                <ul>
+                    <li *ngIf="game && mode === 'classic'">
+                        <p class="informations">Nom du jeu: {{ game.name }}</p>
+                    </li>
+                    <li>
+                        <p class="informations" *ngIf="game && mode === 'classic'">Mode de jeu: Classique</p>
+                        <p class="informations" *ngIf="game && mode === 'sprint'">Mode de jeu: Temps limité</p>
+                    </li>
+                    <li *ngIf="game && mode === 'classic'">
+                        <p class="informations">Nombre de différences total: {{maxDifferences}}</p>
+                    </li>
+                    <li *ngIf="game && mode === 'sprint'">
+                        <p class="informations">Temps gagné: {{timeBonus}} secondes</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="exist-to-format"></div>
+        </div>
+        <h2 class="title-game-information" style="text-align: center">Messages</h2>
+        <app-chat [gameType]="type"></app-chat>
+    </div>
+</div>

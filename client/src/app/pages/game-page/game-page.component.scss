@@ -1,0 +1,204 @@
+.header-container {
+    display: flex;
+    height: 160px;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    font-family: 'Lexend Exa';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+header button {
+    width: 216px;
+    height: 91px;
+    background: #b56b45;
+    border-radius: 40px;
+    position: absolute;
+    left: 32px;
+    top: 38px;
+    font-family: 'Lucida Console', Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: white;
+}
+
+button {
+    cursor: pointer;
+    padding: 0px;
+}
+
+h1 {
+    margin-right: -150px;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 20px;
+}
+
+.bottom-container {
+    margin-left: 75px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background: beige;
+    border-radius: 10px;
+    width: 1345px;
+    height: 150px;
+    padding: 10px;
+}
+
+.parent {
+    height: 100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.clues,
+.timer,
+.counter {
+    margin: 5px;
+    align-items: center;
+}
+
+.placeholder-time {
+    margin-top: -40px;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-size: 30px;
+}
+
+.placeholder-counter {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-size: 30px;
+    display: flex;
+}
+
+.counter div p {
+    margin: 0px;
+}
+
+p {
+    margin-left: 0px;
+    margin-top: 20px;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 20px;
+    color: black;
+}
+
+.button-clue {
+    background-color: palegoldenrod;
+    border: 8px solid palegoldenrod;
+    cursor: pointer;
+}
+
+.sidenav {
+    height: 100%;
+    width: 400px;
+    position: fixed;
+    z-index: 1;
+    right: 0;
+    background-color: #f5f5dc;
+    overflow-x: clip;
+    padding-top: 20px;
+    border-radius: 10px;
+    border: 2px solid #403233;
+}
+
+.title-game-information {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 20px;
+}
+
+.game-information {
+    margin-left: 25px;
+    margin-bottom: 20px;
+    background: #fffaec;
+    border-radius: 10px;
+    width: 900px;
+    height: 173px;
+    border: 3px solid #403233;
+}
+
+.informations {
+    margin-left: 0px;
+    font-size: large;
+}
+
+.messages {
+    margin-left: 25px;
+    margin-bottom: 20px;
+    background: #fffaec;
+    border-radius: 10px;
+    width: 900px;
+    height: 390px;
+    border: 3px solid #403233;
+}
+
+input[type='text'] {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #9b9b89;
+    border-radius: 4px;
+    background-color: white;
+    margin-top: 348px;
+    border-radius: 10px;
+}
+.clue-explication {
+    font-weight: 400;
+    font-size: 18px;
+    margin-top: -5px;
+}
+#clue-section {
+    width: 240px;
+    background-color: palegoldenrod;
+}
+
+#clue-section:hover {
+    transition: .4s;
+    background: palegoldenrod;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.26);
+}
+
+.animation {
+    position: absolute;
+    margin-left: 100px;
+}
+
+.draw-section {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    border-radius: 15px;
+    margin-left: 50px;
+    width: 650px;
+}
+
+.canvas {
+    border: 8px solid #403233;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 640px;
+    height: 480px;
+}
+

@@ -1,0 +1,11 @@
+<div mat-dialog-content class='mat-dialog'>
+    <h1>Attention!</h1>
+    <mat-dialog-content>
+        <p>Êtes-vous sûr de vouloir réinitialiser <strong>tous</strong> les scores de la fiche <strong>{{game.name}}</strong>?</p>
+    </mat-dialog-content>
+    <mat-dialog-actions fxLayoutAlign="end">
+        <button mat-raised-button matDialogClose color="primary" (click)="initScore()">CONFIRMER</button>
+        <button mat-raised-button matDialogClose color="secondary">ANNULER</button>
+    </mat-dialog-actions>
+</div>
+<button mat-button mat-dialog-close id="close-button"> <mat-icon>highlight_off</mat-icon></button>

@@ -1,0 +1,188 @@
+.arrows-group {
+    background-color: beige;
+    border-radius: 15px;
+}
+
+.arrow-section {
+    display: flex;
+    flex-flow: column wrap;
+    width: 61px;
+    height: 366px;
+    margin: auto 32px;
+    border-radius: 15px;
+}
+.arrow-section button {
+    width: 61px;
+    height: 61px;
+    min-width: 0px;
+    border-radius: 15px;
+}
+
+.arrow-section mat-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.draw-section {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: beige;
+    border-radius: 15px;
+    width: 700px;
+    height: 604px;
+}
+
+.drawing-area {
+    border: 5px solid #000000;
+    background-color: white;
+    position: relative;
+    border-radius: 15px;
+}
+
+mat-divider {
+    border: 3px solid rgba(0, 0, 0, 0.6);
+}
+
+h3 {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 20px;
+    color: #403233;
+}
+
+.settings-container {
+    background-color: beige;
+    border-radius: 15px;
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-container {
+    display: flex;
+    width: 1533px;
+    height: 130px;
+    overflow-y: auto;
+}
+
+.footer-container button {
+    margin-left: 14px;
+    margin-top: 6px;
+    width: 215px;
+    background-color: #b56b45;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 20px;
+    border-radius: 40px;
+}
+
+.settings-container button {
+    background-color: #d9d9d9;
+    width: 305px;
+    height: 65px;
+    border-radius: 10px;
+}
+
+.settings-container div {
+    display: flex;
+    margin: auto 70px;
+    justify-content: center;
+}
+#drawing-area {
+    border: 12px solid #403233;
+    background-color: white;
+    border-radius: 20px;
+    margin: 12px 17px 62px 17px;
+}
+#preview-area {
+    position: absolute;
+    top: 62px;
+    left: 0;
+    z-index: 2;
+    border: 12px solid #403233;
+    border-radius: 20px;
+    margin: 12px 17px 62px 17px;
+}
+#drawing-preview {
+    position: absolute;
+    top: 62px;
+    left: 0;
+    z-index: 1;
+    border: 12px solid #403233;
+    border-radius: 20px;
+    margin: 12px 17px 62px 17px;
+}
+#upload-canvas {
+    position: absolute;
+    top: 62px;
+    left: 0;
+    z-index: -1;
+    border: 12px solid #403233;
+    border-radius: 20px;
+    margin: 12px 17px 62px 17px;
+}
+.draw-section header {
+    display: flex;
+    justify-content: space-between;
+    margin: 13px 35px 0px 25px;
+}
+
+.button-group {
+    display: flex;
+    width: 77px;
+    height: 50px;
+    margin-right: 100px;
+}
+
+button {
+    background-color: beige;
+}
+
+mat-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+}
+
+h2 {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 20px;
+    margin-top: 17px;
+}
+
+#help {
+    background-color: white;
+}
+
+.differences p {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.warning {
+    position: relative;
+    top: 15px;
+    left: 10px;
+}
+
+.upload1 {
+    position: relative;
+    right: 23px;
+}
+.upload2 {
+    position: relative;
+    right: 5px;
+}

@@ -1,0 +1,27 @@
+<div class="container justified">
+    <div class="btn-group">
+        <button class="button btn btn-top rainbow" data-hover="Sélectionnez une partie pour jouer en solo ou en duo"
+            routerLink="/game_select">
+            <h2>Mode Classique</h2>
+        </button>
+        <button class="button btn btn-top" data-hover="Jouez contre la montre" (click)="startSprint()">
+            <h2>Mode Temps Limite</h2>
+        </button>
+        <button class="button btn btn-top" data-hover="Modifiez les paramètres de jeu" routerLink="/admin">
+            <h2>Administration</h2>
+        </button>
+    </div>
+
+    <div class="title">
+        <h1>Bienvenue au jeu des différences!</h1>
+        <img src="https://cdn-icons-png.flaticon.com/512/6101/6101365.png" alt="img" />
+    </div>
+    <footer class="footer-item">
+        <h4 class="team-name">Équipe 204</h4>
+        <p>
+            <span>Antoine Poellhuber</span>, <span>Zakaria Babahadji</span>, <span>Fatima Zohra Oulaidi</span>,
+            <span>Mathias Gagnon</span>,
+            <span>Vincent Hua</span>, <span>Thomas Beaugendre</span>
+        </p>
+    </footer>
+</div>

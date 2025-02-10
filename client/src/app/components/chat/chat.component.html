@@ -1,0 +1,11 @@
+<div id="body-box">
+    <div class="message-box" *ngFor="let message of messages" [ngClass]="message.type">
+        <ul class="message-time">{{message.time}} - {{message.name}}</ul> <br>
+        <ul class="message-text">{{message.content}}</ul>
+    </div>
+</div>
+<div id="input-bar">
+    <textarea id="input-box" maxlength="200" type="text" cols="46" rows="5" (keydown)="$event.stopPropagation()"
+        (keydown.enter)="sendMessage()" [disabled]=isSolo()></textarea>
+</div>
+<button mat-button id="send-button" (click)="sendMessage()">Envoyer</button>

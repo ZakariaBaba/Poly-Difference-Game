@@ -1,0 +1,81 @@
+<h1 mat-dialog-title>
+    Mode d'emploi
+</h1>
+<div mat-dialog-content>
+    <br>
+    <div class="guideline-upload">
+        <mat-icon>upload</mat-icon>
+        <mat-icon class="upload-second">upload</mat-icon>
+        <p>
+            Ce bouton permet de téléverser un image de 24 bits de taille 600 x 900 sous
+            le format BMP dans la zone modifiée et la zone original.
+        </p>
+    </div>
+    <div class="guideline-swap_horiz">
+        <mat-icon>swap_horiz</mat-icon>
+        <p>
+            Ce bouton permet de transférer l'image d'une zone à l'autre.
+        </p>
+    </div>
+    <div class="guideline-arrow_forward">
+        <mat-icon>arrow_forward</mat-icon>
+        <p>
+            Ce bouton permet de copier l'image de la zone original à la zone modifiée.
+        </p>
+    </div>
+    <div class="guideline-arrow_back">
+        <mat-icon>arrow_forward</mat-icon>
+        <p>
+            Ce bouton permet de copier l'image de la zone modifiée à la zone originale.
+        </p>
+    </div>
+    <div class="guideline-clear">
+        <mat-icon> layers_clear</mat-icon>
+        <p>
+            Ce bouton permet d'effacer tous les tracés aux crayons qui sont dans la zone de dessin.
+        </p>
+    </div>
+    <div class="guideline-replay">
+        <mat-icon>restore_page</mat-icon>
+        <p>
+            Ce bouton permet de retirer l'image téléversée de la zone de dessin.
+        </p>
+    </div>
+    <div class="guideline-replay">
+        <mat-icon>undo</mat-icon>
+        <p>
+            Ce bouton permet de défaires les changements effectués sur le canvas un à la fois. Raccourci: Ctrl + Z
+        </p>
+    </div>
+    <div class="guideline-replay">
+        <mat-icon>redo</mat-icon>
+        <p>
+            Ce bouton permet de refaire les changements effectués sur le canvas un à la fois. Raccourci: Ctrl + Shift +
+            Z
+        </p>
+    </div>
+    <div class="guideline-replay">
+        <mat-icon></mat-icon>
+        <p>
+            Le bouton <strong>Valider les différences</strong> permet de visualiser les différences détectées.
+        </p>
+    </div>
+    <div class="guideline-replay">
+        <mat-icon></mat-icon>
+        <p>
+            Le <strong>rayon d'élargissement</strong> permet d’élargir la zone considérée comme modifiée.
+        </p>
+    </div>
+    <div class="guideline-replay">
+        <mat-icon></mat-icon>
+        <p>
+            Le bouton <strong>Sauvegarder</strong> vous permet de nommer votre fiche de jeu et de l'enregistrer.
+        </p>
+    </div>
+</div>
+<div mat-dialog-actions fxLayoutAlign="end">
+    <button mat-raised-button matDialogClose color="primary" (click)="close()" id="close">J'ai compris !</button>
+</div>
+<button mat-button mat-dialog-close id="close-button">
+    <mat-icon>highlight_off</mat-icon>
+</button>

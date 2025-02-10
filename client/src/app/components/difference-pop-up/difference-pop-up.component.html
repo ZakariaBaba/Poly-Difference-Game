@@ -1,0 +1,9 @@
+<h1 matDialogTitle>Voici votre image de différence!</h1>
+<mat-dialog-content>
+    <canvas id="difference-canvas" #differenceCanvas width="640px" height="480px" style="border:1px solid #000000">
+    </canvas>
+</mat-dialog-content>
+<mat-dialog-actions fxLayoutAlign="end">
+    <button mat-raised-button matDialogClose color="primary">Fermer</button>
+</mat-dialog-actions>
+<button mat-button mat-dialog-close id="close-button"> <mat-icon>highlight_off</mat-icon></button>

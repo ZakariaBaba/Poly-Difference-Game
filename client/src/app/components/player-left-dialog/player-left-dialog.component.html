@@ -1,0 +1,10 @@
+<div mat-dialog-content class='mat-dialog'>
+    <h1>Attention!</h1>
+    <mat-dialog-content>
+        <p>{{endGameMessage}}</p>
+    </mat-dialog-content>
+    <mat-dialog-actions fxLayoutAlign="end">
+        <button mat-raised-button (click)="continueSolo()" color="primary">Continuer</button>
+        <button mat-raised-button (click)="leave()" color="warn">Quitter</button>
+    </mat-dialog-actions>
+</div>

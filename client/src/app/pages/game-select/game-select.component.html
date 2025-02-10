@@ -1,0 +1,99 @@
+<div style="display: flex; flex-direction: column; align-items:space-between; justify-content: space-between;">
+    <nav>
+        <button class='menu' mat-button color="primary" routerLink="/home">Quitter</button>
+        <ng-container *ngIf="isAdmin; then admin; else notAdmin"> </ng-container>
+        <ng-template #admin>
+            <h1 id="title-of-page" *ngIf="isAdmin">ADMINISTRATION</h1>
+
+        </ng-template>
+        <ng-template #notAdmin>
+            <h1 id="title-of-page" *ngIf="!isAdmin">SELECTION</h1>
+        </ng-template>
+    </nav>
+    <div class="all-button-container">
+        <div *ngIf="isAdmin" fxLayout="row" fxLayoutAlign="end" fxLayoutGap="10px">
+            <button mat-raised-button class="button-delete" color="primary" (click)="openTrashDialog()">
+                <mat-icon [ngStyle]="{'color':'black'}" class="trash">delete_outline</mat-icon>Tout supprimer
+            </button>
+            <button mat-raised-button class="button-delete" color="primary"
+                (click)="openResetAllDialogComponent(games)">
+                <mat-icon [ngStyle]="{'color':'black'}" class="history">history</mat-icon>Tout réinitialiser
+            </button>
+        </div>
+    </div>
+    <div fxLayout="row" class="main-container">
+        <div fxLayout="row" fxLayoutAlign="center center" class="arrow-container">
+            <button color="primary" mat-button class="triangle previous-button" *ngIf="this.currentGameIndex!== 0"
+                (click)="onPreviousClick()"></button>
+        </div>
+        <div class="grid-container">
+            <div class="no-games" *ngIf="games.length === 0">
+                <p class="note">Il n'y a aucun jeu pour le moment...</p>
+            </div>
+            <div class="no-game" *ngIf="games.length === 0">
+                <img class="cat"
+                    src="https://thumbs.dreamstime.com/b/binoculars-cat-searching-looking-observing-care-isolated-white-54688932.jpg"
+                    alt="Italian Trulli">
+            </div>
+            <mat-grid-list class='grid' *ngIf="games.length !== 0" cols="2" rowHeight="2.1:1" [gutterSize]="'50px'">
+                <mat-grid-tile scroll="no" *ngFor="let game of games">
+                    <div style="display: flex; flex-direction:column; justify-content: center;">
+                        <div class="title-container" style="margin-top: -5px; margin-bottom: 10px;">
+                            <h1 class="game-title">{{ game.name }}</h1>
+                        </div>
+
+                        <div class="info-grid-container"
+                            style="display:flex; flex-direction: row; justify-content: space-around; margin-top: -10px;">
+                            <div class="image-container">
+                                <img class="image" src="{{ serverUrl+game.originalSource }}" height="200px"
+                                    width="200px" />
+                            </div>
+                            <div class='top-title' style="display: flex; flex-direction:column; margin-top: 50px;">
+                                <app-game-score *ngIf="game.id" [gameId]="game.id">
+                                </app-game-score>
+                                <div fxLayout="row" fxLayoutGap="20px" class="tile-buttons">
+                                    <div>
+                                        <button class='button-delete  left-button' mat-raised-button color="primary" *ngIf="isAdmin"
+                                            (click)="openDeleteConfirmationDialog(game)">
+                                            supprimer la fiche
+                                        </button>
+                                        <button class='button-create left-button' mat-raised-button color="primary" *ngIf="!isAdmin"
+                                            (click)="startSolo(game.id)">
+                                            <mat-icon>person</mat-icon><span>jouer en solo</span>
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button (click)="openScoreResetDialog(game)" class='button-create'
+                                            mat-raised-button color="primary" *ngIf="isAdmin">réinitialiser les
+                                            scores</button>
+                                        <button class='button-create' mat-raised-button color="primary"
+                                            *ngIf="!isAdmin && !game.isWaiting" (click)="createLobby(game.id)">
+                                            <mat-icon>group</mat-icon><span>Créer une partie </span>
+                                        </button>
+                                        <button class='button-create' mat-raised-button color="primary"
+                                            *ngIf="!isAdmin && game.isWaiting" (click)="joinLobby(game.id)">
+                                            <mat-icon>group</mat-icon><span>Joindre une partie </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center" class="arrow-container">
+            <button color="primary" mat-button class="next-button triangle" *ngIf="isNextButtonEnabled"
+                (click)="onNextClick()"></button>
+        </div>
+    </div>
+
+    <div class="footer" *ngIf="isAdmin">
+        <button mat-raised-button color="primary" class="button-admin cst-button" (click)="openConstantDialog()">
+            Modifier les constantes
+        </button>
+        <button mat-raised-button color="primary" class="button-admin" routerLink="/creation">
+            Créer un jeu
+        </button>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+{
+    "listOfGames": [
+        {
+            "id": 1,
+            "name": "Game 1",
+            "imgBase": "http://localhost:3000/api/list-game/image/1",
+            "bestScores": [
+                {
+                    "rank": 1,
+                    "time": "1:11"
+                },
+                {
+                    "rank": 2,
+                    "time": "1:11"
+                }
+            ],
+            "numberOfDifference": 5
+        },
+        {
+            "id": 2,
+            "name": "Game 2",
+            "imgBase": "http://localhost:3000/api/list-game/image/2",
+            "bestScores": [
+                {
+                    "rank": 1,
+                    "time": "1:11"
+                },
+                {
+                    "rank": 2,
+                    "time": "1:11"
+                }
+            ],
+            "numberOfDifference": 5
+        }
+    ]
+}
