@@ -11,4 +11,5 @@ export enum GameEvents {
     PlayerLeft = 'playerLeft',
     Constant = 'constant',
     ContinueSolo = 'continueSolo',
+    CreateGame = 'createGame',
 }
